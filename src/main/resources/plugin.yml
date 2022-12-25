@@ -1,0 +1,30 @@
+name: DarsaSystem
+version: '${project.version}'
+main: org.fortyoteam.darsasystem.Main
+api-version: 1.19
+
+commands:
+  darsablacksmith:
+    description: Open Blacksmith
+    aliases:
+      - bls
+    usage: /darsablacksmith
+  darsabuff:
+    description: Give players buff
+    usage: /darsabuff [name]
+  darsahelp:
+    description: Show list of all commands
+    usage: /darsahelp
+    aliases:
+      - dsh
+  darsaitem:
+    description: Give player Custom Darsa Item
+    aliases:
+      - dsi
+    usage: /darsaitem [itemname]
+  darsashop:
+    description: Open Shop GUI
+    usage: /darsashop
+  dsr:
+    description: Reload Config
+    usage: /dsr
