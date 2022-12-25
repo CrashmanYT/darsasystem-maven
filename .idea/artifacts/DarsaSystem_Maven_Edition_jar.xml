@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="DarsaSystem Maven Edition:jar">
+    <output-path>$PROJECT_DIR$/../../Seputar Perkodingan/Java/Minecraft/Plugin Development/plugins</output-path>
+    <root id="archive" name="DarsaSystem.jar">
+      <element id="module-output" name="DarsaSystem" />
+    </root>
+  </artifact>
+</component>
