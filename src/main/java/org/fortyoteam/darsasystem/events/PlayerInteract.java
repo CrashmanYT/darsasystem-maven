@@ -15,11 +15,14 @@ public class PlayerInteract implements Listener {
     public void onPlayerInteract(PlayerInteractEvent e) {
 
         if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
-            boolean isDarsaItem = false;
+            if (e.getItem() == null) return;
             for (String key : ItemConfig.get().getKeys(false)) {
-                String item = ItemConfig.get().getString(key + ".DisplayName");
-                isDarsaItem = e.getItem().getItemMeta().getDisplayName().equals(ChatColor.translateAlternateColorCodes('&',item));
-                if (isDarsaItem) DarsaItem.setEvent(e, key);
+
+            boolean isDarsaItem = false;
+            String item = ItemConfig.get().getString(key + ".DisplayName");
+            isDarsaItem = e.getItem().getItemMeta().getDisplayName().equals(ChatColor.translateAlternateColorCodes('&',item));
+            if (isDarsaItem) DarsaItem.setEvent(e, key);
+
             }
         }
 

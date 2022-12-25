@@ -9,9 +9,10 @@ import org.fortyoteam.darsasystem.config.ItemConfig;
 import org.fortyoteam.darsasystem.ui.DScoreboard;
 
 public class Main extends JavaPlugin {
+    public static JavaPlugin plugin;
     @Override
     public void onEnable() {
-
+        plugin = this;
         // Load Config
         getConfig().options().copyDefaults();
         saveDefaultConfig();
@@ -25,7 +26,6 @@ public class Main extends JavaPlugin {
         ScoreboardConfig.save();
 
         new DScoreboard(getServer().getOnlinePlayers());
-
         // Config Commands
         getCommand("dsr").setExecutor(new Reload());
 
@@ -47,6 +47,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerPickupItem(), this);
         getServer().getPluginManager().registerEvents(new PlayerDropItem(), this);
         getServer().getPluginManager().registerEvents(new PlayerDeath(), this);
+        getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
         getServer().getPluginManager().registerEvents(new InventoryClick(), this);
         getServer().getPluginManager().registerEvents(new InventoryMove(), this);
         getServer().getPluginManager().registerEvents(new InventoryOpen(), this);

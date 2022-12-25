@@ -17,6 +17,8 @@ import java.util.*;
 public class Blacksmith implements CommandExecutor {
     public static Inventory blacksmithGui;
     public static NavigableMap<String, String[]> tiers;
+
+
     static {
         tiers = new TreeMap<String, String[]>();
         tiers.put("(1) " + "Tier C", new String[] {"WOOD", "STONE", "IRON"});
@@ -60,19 +62,13 @@ public class Blacksmith implements CommandExecutor {
      * - InventoryClick
      *
      */
-    public static Object[] setItemTier(Player player, ItemStack e, boolean cancel, boolean isGrindstone) {
+    public Object[] setItemTier(Player player, ItemStack e, boolean cancel, boolean isGrindstone) {
          ItemStack item = e;
          String itemId =  item.getType().name();
          ItemMeta meta = item.getItemMeta();
          List<String> lore = new ArrayList<>();
          StringBuilder test = new StringBuilder();
 
-         // if item is darsa item
-        for (String key : ItemConfig.get().getKeys(false)) {
-            if (!item.getItemMeta().getDisplayName().equals(ItemConfig.get().getString(key + ".DisplayName"))) {
-                return new Object[]{};
-            }
-        }
 
 
 
@@ -97,10 +93,16 @@ public class Blacksmith implements CommandExecutor {
                  meta.setLore(lore);
                  item.setItemMeta(meta);
 
+                 // if item is darsa item
+                for (String key : ItemConfig.get().getKeys(false)) {
+                    if (!item.getItemMeta().getDisplayName().equals(ItemConfig.get().getString(key + ".DisplayName"))) {
+                        return new Object[]{false, item, item.getItemMeta()};
+                    }
+                }
                  // if setCancelled true, give item to player
                  if (cancel) return new Object[] {cancel, player.getInventory().addItem(item), item.getItemMeta()};
 
-                // return [Cancel condition, item]
+                // return [Cancel condition, item, meta]
                  return new Object[] {cancel, item, item.getItemMeta()};
              }
          }

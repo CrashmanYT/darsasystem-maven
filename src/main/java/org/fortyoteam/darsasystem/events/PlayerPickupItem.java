@@ -9,7 +9,7 @@ public class PlayerPickupItem implements Listener {
 
     @EventHandler
     public void onPlayerPickupItemEvent(PlayerPickupItemEvent e) {
-        e.setCancelled((boolean) Blacksmith.setItemTier(e.getPlayer(), e.getItem().getItemStack(), true, false)[0]);
+        e.setCancelled((boolean) new Blacksmith().setItemTier(e.getPlayer(), e.getItem().getItemStack(), true, false)[0]);
 
         if (e.isCancelled()) e.getItem().remove();
     }

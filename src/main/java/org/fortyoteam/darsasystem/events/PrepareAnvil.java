@@ -10,7 +10,7 @@ import org.fortyoteam.darsasystem.commands.Blacksmith;
 public class PrepareAnvil implements Listener {
 
     @EventHandler
-    public void onPrepareItemCraft(PrepareAnvilEvent e) {
-        e.setResult((ItemStack) Blacksmith.setItemTier((Player) e.getView().getPlayer(), e.getResult(), false, false)[1]);
+    public void onPrepareAnvil(PrepareAnvilEvent e) {
+        e.setResult((ItemStack) new Blacksmith().setItemTier((Player) e.getView().getPlayer(), e.getResult(), false, false)[1]);
     }
 }

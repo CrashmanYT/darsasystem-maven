@@ -14,27 +14,30 @@ import java.util.regex.Pattern;
 
 public class DScoreboard {
     private static final ScoreboardManager manager = Bukkit.getScoreboardManager();
-    private static Scoreboard scoreboard = manager.getNewScoreboard();
+    public static Scoreboard scoreboard = manager.getNewScoreboard();
     private static Collection<? extends Player> onlinePlayers;
+    private static Objective sideBar;
 
     public DScoreboard(Collection<? extends Player> players) {
         onlinePlayers = players;
         ArrayList<String>scoreboardLines = (ArrayList<String>) ScoreboardConfig.get().getStringList("scoreboard.lines");
         String displayName = ScoreboardConfig.get().getString("scoreboard.displayname");
 
-        Objective sideBar = scoreboard.registerNewObjective("sidebar", "sidebar", ChatColor.translateAlternateColorCodes('&', displayName));
-        sideBar.setDisplaySlot(DisplaySlot.SIDEBAR);
-        for (Player player : players) {
-            int lineCount = 1;
-            for (int i = scoreboardLines.size() - 1; i >= 0; i--) {
-                Score score = setScore(player, scoreboardLines.get(i), sideBar);
-                score.setScore(lineCount);
+        if (scoreboard.getObjective("sidebar") == null) {
+            sideBar = scoreboard.registerNewObjective("sidebar", "sidebar", ChatColor.translateAlternateColorCodes('&', displayName));
+            sideBar.setDisplaySlot(DisplaySlot.SIDEBAR);
+            for (Player player : players) {
 
-                ++lineCount;
+                int lineCount = 1;
+                for (int i = scoreboardLines.size() - 1; i >= 0; i--) {
+                    Score score = setScore(player, scoreboardLines.get(i), sideBar);
+                    score.setScore(lineCount);
+                    ++lineCount;
+                }
+                player.setScoreboard(scoreboard);
             }
-            player.setScoreboard(scoreboard);
-        }
 
+        }
 
     }
 
