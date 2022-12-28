@@ -29,8 +29,9 @@ public class FrostSword{
             server.broadcastMessage(DarsaConfig.SYSTEM_NAME + ChatColor.translateAlternateColorCodes('&',
                     "&6&l" + e.getPlayer().getName() + "&a Mengaktifkan kemampuan &b&lIce Capsule"
             ));
-            // stun enemy
 
+            // collect other players around player
+            // stun enemy
             Collection<Entity> entities = playerLocation.getWorld().getNearbyEntities(playerLocation, radius, radius, radius);
             for (Entity entity : entities) {
                 if (entity instanceof Player) {
@@ -40,15 +41,17 @@ public class FrostSword{
                     }
                 }
             }
-            player.getWorld().playSound(playerLocation, Sound.BLOCK_ANVIL_PLACE, 1, 1);
+            player.getWorld().playSound(playerLocation, Sound.BLOCK_ANVIL_PLACE, 1, 1); // play sound
             Location playerLoc = player.getLocation();
 
+            // get player location/coordinate
             int x = playerLoc.getBlockX();
             int y = playerLoc.getBlockY();
             int z = playerLoc.getBlockZ();
 
             World world = playerLoc.getWorld();
 
+            // get blocks around player
             List<Block> blocks = new ArrayList<>();
             for (int i = -radius; i <= radius; i++) {
                 for (int j = -radius; j <= radius; j++) {
@@ -56,6 +59,7 @@ public class FrostSword{
                     blocks.add(block);
                 }
             }
+            // set blocks around player to snow
             for (Block block : blocks) {
                 block.setType(Material.SNOW);
             }

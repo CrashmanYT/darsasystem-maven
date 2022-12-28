@@ -14,6 +14,7 @@ public class PlayerPickupItem implements Listener {
         e.setCancelled(tier.isCancel());
         // remove item/block when player picked
         if (e.isCancelled()) {
+            e.getPlayer().getInventory().addItem(tier.getItem());
             e.getItem().remove();
 
         }

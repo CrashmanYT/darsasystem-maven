@@ -1,7 +1,9 @@
 package org.fortyoteam.darsasystem.commands;
 
+import io.lumine.mythic.bukkit.utils.lib.jooq.False;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -65,46 +67,43 @@ public class Blacksmith implements CommandExecutor {
      */
     public Tier setItemTier(Player player, ItemStack e, boolean cancel, boolean isGrindstone) {
          ItemStack item = e;
-         String itemType =  item.getType().name();
-         ItemMeta meta = item.getItemMeta();
+         String itemType =  item.getType() == null ? new ItemStack(Material.DIAMOND_SWORD).getType().name() : item.getType().name();
+         ItemMeta meta = item.hasItemMeta() ? item.getItemMeta() : Bukkit.getItemFactory().getItemMeta(Material.DIAMOND_SWORD);
          List<String> lore = new ArrayList<>();
-         StringBuilder test = new StringBuilder();
 
 
-         // if item is darsa item
-        for (String key : ItemConfig.get().getKeys(false)) {
-            if (item.getItemMeta().getDisplayName().equals(ChatColor.translateAlternateColorCodes('&', ItemConfig.get().getString(key + ".DisplayName")))) {
-                return new Tier(item ,meta,false);
-            }
-        }
-        //loop tiers type
-        for (String tier : tiers.keySet()) {
-            // loop tiers item
-             for (String tierItemType : tiers.get(tier)) {
 
-                 if (!itemType.contains(tierItemType)) continue; // if item type isn't items that listed in tiers list
-                 // if item is enchanted, upgrade tier
-                 if (item.getEnchantments().size() > 0) {
-                     lore.add((!tier.contains("S+") ? tiers.higherKey(tier) : tier));
-                 } else {
-                     lore.add(tier);
-                 }
+       // if item is darsa item
+       for (String key : ItemConfig.get().getKeys(false)) {
+           if (item.getItemMeta().getDisplayName().equals(ChatColor.translateAlternateColorCodes('&', ItemConfig.get().getString(key + ".DisplayName")))) {
+               return new Tier(item ,meta,false);
+           }
+       }
+       //loop tiers type
+       for (String tier : tiers.keySet()) {
+           // loop tiers item
+           for (String tierItemType : tiers.get(tier)) {
 
-                 meta.setLore(lore);
-                 item.setItemMeta(meta);
+               if (!itemType.contains(tierItemType)) continue; // if item type isn't items that listed in tiers list
+               // if item is enchanted, upgrade tier
+               if (item.getEnchantments().size() > 0) {
+                   lore.add((!tier.contains("S+") ? tiers.higherKey(tier) : tier));
+               } else {
+                   lore.add(tier);
+               }
 
-                 // if setCancelled true, give item to player
-                 if (cancel) {
-                     player.getInventory().addItem(item);
-                     return new Tier(item, item.getItemMeta(), true);
-                 }
-                // return [Cancel condition, item, meta]
-                 return new Tier(item,meta, false);
-             }
-         }
-        player.getInventory().addItem(item);
+               meta.setLore(lore);
+               item.setItemMeta(meta);
 
-        return new Tier(item,meta,cancel);
+               // if setCancelled true, give item to player
+               if (cancel) {
+                   return new Tier(item, item.getItemMeta(), true);
+               }
+               // return [Cancel condition, item, meta]
+               return new Tier(item,meta, false);
+           }
+       }
+       return new Tier(item,meta,cancel);
 
     }
 

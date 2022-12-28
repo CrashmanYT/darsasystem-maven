@@ -38,6 +38,5 @@ public class TotemOfReversal {
         // give damage to killer
         killer.setHealth(killer.getHealth() / 2);
 
-
     }
 }

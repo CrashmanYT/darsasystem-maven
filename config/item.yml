@@ -28,10 +28,10 @@ lightboots:
   Tier: '&c&lTier S+'
   DisplayName: '&e&lLight Boots'
   Lore:
-    - '&eThe Legendary shoes once worn by the Fastest Knight, &lKnight of Light!!'
+  - '&eThe Legendary shoes once worn by the Fastest Knight, &lKnight of Light!!'
 totemofreversal:
   Type: TOTEM_OF_UNDYING
   Tier: '&c&lTier S+'
   DisplayName: '&4&lTotem Of Reversal'
   Lore:
-    - '&eThe totem that can &a&lRevive you and &c&lCounter enemy attacks'
+  - '&eThe totem that can &a&lRevive you and &c&lCounter enemy attacks'
