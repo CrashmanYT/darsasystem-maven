@@ -9,6 +9,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.fortyoteam.darsasystem.config.ItemConfig;
+import org.fortyoteam.darsasystem.items.AncientHealingBall;
 import org.fortyoteam.darsasystem.items.FrostSword;
 
 import java.util.ArrayList;
@@ -55,6 +56,8 @@ public class DarsaItem implements CommandExecutor {
                 break;
             case "phoenixaxe":
                 e.getPlayer().sendMessage("phoenixaxe activated");
+            case "ancienthealball":
+                new AncientHealingBall(e,e.getPlayer());
 
             default:
 

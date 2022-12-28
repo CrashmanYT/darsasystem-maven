@@ -103,6 +103,7 @@ public class Blacksmith implements CommandExecutor {
              }
          }
         player.getInventory().addItem(item);
+
         return new Tier(item,meta,cancel);
 
     }
