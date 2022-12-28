@@ -1,0 +1,31 @@
+frostsword:
+  Type: DIAMOND_SWORD
+  Tier: '&c&lTier S+'
+  DisplayName: '&b&lFrost Sword'
+  Lore:
+  - The mystical sword once wielded by the &b&lIce Lord
+
+phoenixaxe:
+  Type: NETHERITE_AXE
+  Tier: '&c&lTier S+'
+  DisplayName: '&c&lPhoenix Axe'
+  Lore:
+  - The mystical sword once wielded by the &c&lFire Lord
+ancienthealball:
+  Type: HEART_OF_THE_SEA
+  Tier: '&c&lTier S+'
+  DisplayName: '&a&lAncient Healing Ball'
+  Lore:
+  - The ball that can &aheal your team.
+undeadresurrection:
+  Type: WITHER_SKELETON_SKULL
+  Tier: '&c&lTier S+'
+  DisplayName: '&4&lUndead Resurrection'
+  Lore:
+  - An item that can resurrect the undead. The power of a &4&lNecromancer King.
+lightboots:
+  Type: GOLDEN_BOOTS
+  Tier: '&c&lTier S+'
+  DisplayName: '&e&lLight Boots'
+  Lore:
+  - '&eThe Legendary shoes once worn by the Fastest Knight, &lKnight of Light!!'
