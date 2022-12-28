@@ -51,7 +51,7 @@ public class DarsaItem implements CommandExecutor {
     public static void setEvent(PlayerInteractEvent e, String itemname) {
         switch (itemname) {
             case "frostsword":
-                FrostSword.frostSwordEvent(e);
+                FrostSword.setEvent(e);
                 break;
             case "phoenixaxe":
                 e.getPlayer().sendMessage("phoenixaxe activated");
@@ -60,6 +60,16 @@ public class DarsaItem implements CommandExecutor {
 
         }
     }
+    public static void isDarsaItem(PlayerInteractEvent e) {
+        if (e.getItem() == null) return;
+        for (String key : ItemConfig.get().getKeys(false)) {
 
+            boolean isDarsaItem = false;
+            String item = ItemConfig.get().getString(key + ".DisplayName");
+            isDarsaItem = e.getItem().getItemMeta().getDisplayName().equals(ChatColor.translateAlternateColorCodes('&',item));
+            if (isDarsaItem) setEvent(e, key);
+
+        }
+    }
 
 }

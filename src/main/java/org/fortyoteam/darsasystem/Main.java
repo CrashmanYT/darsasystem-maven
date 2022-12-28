@@ -1,17 +1,18 @@
 package org.fortyoteam.darsasystem;
 
+import io.lumine.mythic.api.mobs.model.MobModel;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.fortyoteam.darsasystem.commands.*;
 import org.fortyoteam.darsasystem.completer.*;
 import org.fortyoteam.darsasystem.config.ScoreboardConfig;
 import org.fortyoteam.darsasystem.events.*;
 import org.fortyoteam.darsasystem.config.ItemConfig;
-import org.fortyoteam.darsasystem.ui.DScoreboard;
 
 public class Main extends JavaPlugin {
     public static JavaPlugin plugin;
     @Override
     public void onEnable() {
+
         plugin = this;
         // Load Config
         getConfig().options().copyDefaults();
@@ -24,8 +25,6 @@ public class Main extends JavaPlugin {
         ScoreboardConfig.setup();
         ScoreboardConfig.get().options().copyDefaults(true);
         ScoreboardConfig.save();
-
-        new DScoreboard(getServer().getOnlinePlayers());
         // Config Commands
         getCommand("dsr").setExecutor(new Reload());
 
@@ -40,7 +39,6 @@ public class Main extends JavaPlugin {
         getCommand("darsahelp").setExecutor(new Help(this));
 
         getCommand("darsashop").setExecutor(new Shop());
-
 
 
         getServer().getPluginManager().registerEvents(new PlayerInteract(), this);

@@ -10,7 +10,7 @@ import org.fortyoteam.darsasystem.commands.Blacksmith;
 public class PrepareSmithing implements Listener {
 
     @EventHandler
-    public void onPrepareItemCraft(PrepareSmithingEvent e) {
-        e.setResult((ItemStack) new Blacksmith().setItemTier((Player) e.getView().getPlayer(), e.getResult(), false, false)[1]);
+    public void onPrepareSmithing(PrepareSmithingEvent e) {
+        e.setResult(new Blacksmith().setItemTier((Player) e.getView().getPlayer(), e.getResult(), false, false).getItem());
     }
 }

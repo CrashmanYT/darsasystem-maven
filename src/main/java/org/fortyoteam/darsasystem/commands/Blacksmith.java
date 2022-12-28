@@ -11,6 +11,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.fortyoteam.darsasystem.config.ItemConfig;
+import org.fortyoteam.darsasystem.type.Tier;
 
 import java.util.*;
 
@@ -21,7 +22,7 @@ public class Blacksmith implements CommandExecutor {
 
     static {
         tiers = new TreeMap<String, String[]>();
-        tiers.put("(1) " + "Tier C", new String[] {"WOOD", "STONE", "IRON"});
+        tiers.put("(1) " + "Tier C", new String[] {"STONE", "IRON"});
         tiers.put( "(2) " + ChatColor.BLUE + "" + ChatColor.BOLD + "Tier B", new String[] {"GOLD", "BOW"});
         tiers.put( "(3) " + ChatColor.YELLOW + "" + ChatColor.BOLD + "Tier A", new String[] {"DIAMOND", "CROSSBOW"});
         tiers.put( "(4) " + ChatColor.DARK_AQUA + "" + ChatColor.BOLD + "Tier S", new String[] {"NETHERITE"});
@@ -59,31 +60,30 @@ public class Blacksmith implements CommandExecutor {
      * - PrepareAnvil
      * - PrepareSmithing
      * - PlayerPickupItem
-     * - InventoryClick
+     *
      *
      */
-    public Object[] setItemTier(Player player, ItemStack e, boolean cancel, boolean isGrindstone) {
+    public Tier setItemTier(Player player, ItemStack e, boolean cancel, boolean isGrindstone) {
          ItemStack item = e;
-         String itemId =  item.getType().name();
+         String itemType =  item.getType().name();
          ItemMeta meta = item.getItemMeta();
          List<String> lore = new ArrayList<>();
          StringBuilder test = new StringBuilder();
 
 
-
-
+         // if item is darsa item
+        for (String key : ItemConfig.get().getKeys(false)) {
+            if (item.getItemMeta().getDisplayName().equals(ChatColor.translateAlternateColorCodes('&', ItemConfig.get().getString(key + ".DisplayName")))) {
+                return new Tier(item ,meta,false);
+            }
+        }
+        //loop tiers type
         for (String tier : tiers.keySet()) {
-             // if player using grindstone, downgrade tier
-             if (isGrindstone) {
-                 lore.add(tiers.lowerKey(tier));
-                 meta.setLore(lore);
-                 item.setItemMeta(meta);
+            // loop tiers item
+             for (String tierItemType : tiers.get(tier)) {
 
-                 return new Object[] {cancel, item, item.getItemMeta()};
-
-             }
-             for (String tierItem : tiers.get(tier)) {
-                 if (!itemId.contains(tierItem)) continue;
+                 if (!itemType.contains(tierItemType)) continue; // if item type isn't items that listed in tiers list
+                 // if item is enchanted, upgrade tier
                  if (item.getEnchantments().size() > 0) {
                      lore.add((!tier.contains("S+") ? tiers.higherKey(tier) : tier));
                  } else {
@@ -93,20 +93,17 @@ public class Blacksmith implements CommandExecutor {
                  meta.setLore(lore);
                  item.setItemMeta(meta);
 
-                 // if item is darsa item
-                for (String key : ItemConfig.get().getKeys(false)) {
-                    if (!item.getItemMeta().getDisplayName().equals(ItemConfig.get().getString(key + ".DisplayName"))) {
-                        return new Object[]{false, item, item.getItemMeta()};
-                    }
-                }
                  // if setCancelled true, give item to player
-                 if (cancel) return new Object[] {cancel, player.getInventory().addItem(item), item.getItemMeta()};
-
+                 if (cancel) {
+                     player.getInventory().addItem(item);
+                     return new Tier(item, item.getItemMeta(), true);
+                 }
                 // return [Cancel condition, item, meta]
-                 return new Object[] {cancel, item, item.getItemMeta()};
+                 return new Tier(item,meta, false);
              }
          }
-         return new Object[] {cancel, item, item.getItemMeta()};
+        player.getInventory().addItem(item);
+        return new Tier(item,meta,cancel);
 
     }
 

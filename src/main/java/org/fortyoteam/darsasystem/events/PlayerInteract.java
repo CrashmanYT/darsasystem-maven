@@ -13,18 +13,7 @@ public class PlayerInteract implements Listener {
 
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent e) {
-
-        if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
-            if (e.getItem() == null) return;
-            for (String key : ItemConfig.get().getKeys(false)) {
-
-            boolean isDarsaItem = false;
-            String item = ItemConfig.get().getString(key + ".DisplayName");
-            isDarsaItem = e.getItem().getItemMeta().getDisplayName().equals(ChatColor.translateAlternateColorCodes('&',item));
-            if (isDarsaItem) DarsaItem.setEvent(e, key);
-
-            }
-        }
+            DarsaItem.isDarsaItem(e);
 
     }
 
