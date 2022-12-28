@@ -1,6 +1,6 @@
 package org.fortyoteam.darsasystem;
 
-import io.lumine.mythic.api.mobs.model.MobModel;
+
 import org.bukkit.plugin.java.JavaPlugin;
 import org.fortyoteam.darsasystem.commands.*;
 import org.fortyoteam.darsasystem.completer.*;
@@ -46,6 +46,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerDropItem(), this);
         getServer().getPluginManager().registerEvents(new PlayerDeath(), this);
         getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
+        getServer().getPluginManager().registerEvents(new EntityResurrect(), this);
         getServer().getPluginManager().registerEvents(new InventoryClick(), this);
         getServer().getPluginManager().registerEvents(new InventoryMove(), this);
         getServer().getPluginManager().registerEvents(new InventoryOpen(), this);

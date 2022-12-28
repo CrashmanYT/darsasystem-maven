@@ -18,7 +18,7 @@ public class AncientHealingBall {
             for (Team team : sb.getTeams()) {
                 for (String memberName : team.getEntries()) {
                     Player member = Bukkit.getPlayer(memberName);
-                    member.setHealth(20.0);
+                    member.setHealth(member.getMaxHealth());
                     member.getWorld().playSound(member, Sound.ENTITY_FIREWORK_ROCKET_LAUNCH, 2,2);
                 }
             }
