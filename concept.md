@@ -41,9 +41,9 @@ Note :
 
 |Item Name| Item Type| Ability | Description |
 |---------|----------|-------- |------------ |
-|Frost Sword| DIAMOND_SWORD| <ul> <li> Stun Enemy : 2 Seconds</li><li> Ice Domain : Mengubah sekeliling menjadi es</li> </ul>| The mystical sword once wielded by the Ice Lord |
-|Fiery Sword| NETHERITE_SWORD | <ul><li>Burn Enemy : 10 Seconds</li>Fire Domain : Mengubah sekeliling menjadi api<li></li></ul>| The mystical sword once wielded by the Fire Lord |
-|Light Boots| GOLD_BOOTS| <ul> <li> Increase Speed : 2x </li> </ul>| The Legendary shoes once worn by the Fastest Knight, Knight of Light!! |
-|Ancient Ball| HEART_OF_THE_SEA | <ul><li>Heal Player Team</li></ul>| The ball that can heal your team. | 
-|Shadow Cape| LEATHER_CHESTPLATE | <ul><li>Make Player Invisible</li></ul>| The mantle of the greatest assassin with the ability to Hide himself in the shadows |
-|Undead Resurrection| WITHER_SKELETON_SKULL | <ul><li>Resurrect 8 Undead </li></ul>| An item that can resurrect the undead. The power of a Necromancer King.|
+|Frost Sword| <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/b/b9/Diamond_Sword_%28MCD%29.png/revision/latest/scale-to-width-down/150?cb=20200407193216" width=30/>DIAMOND_SWORD| <ul> <li> Stun Enemy : 2 Seconds</li><li> Ice Domain : Mengubah sekeliling menjadi es</li> </ul>| The mystical sword once wielded by the Ice Lord |
+|Fiery Sword|<img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/0/0f/Netherite_Sword_JE2_BE2.png/revision/latest?cb=20200304213920" width=30/> NETHERITE_SWORD | <ul><li>Burn Enemy : 10 Seconds</li>Fire Domain : Mengubah sekeliling menjadi api<li></li></ul>| The mystical sword once wielded by the Fire Lord |
+|Light Boots| <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7c/Golden_Boots_JE2_BE2.png/revision/latest?cb=20200218002539" width=30/> GOLD_BOOTS| <ul> <li> Increase Speed : 2x </li> </ul>| The Legendary shoes once worn by the Fastest Knight, Knight of Light!! |
+|Ancient Ball| <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/9/9b/Heart_of_the_Sea_JE1_BE2.png/revision/latest?cb=20190403190228" width=30/> HEART_OF_THE_SEA | <ul><li>Heal Player Team</li></ul>| The ball that can heal your team. | 
+|Shadow Cape| <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/b/b7/Leather_Tunic_JE4_BE2.png/revision/latest?cb=20200218001806" width=30/> LEATHER_CHESTPLATE | <ul><li>Make Player Invisible</li></ul>| The mantle of the greatest assassin with the ability to Hide himself in the shadows |
+| Undead Resurrection| <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/5d/Wither_Skeleton_Skull_%288%29.png/revision/latest?cb=20220101133147" width=30/>WITHER_SKELETON_SKULL | <ul><li>Resurrect 8 Undead </li></ul>| An item that can resurrect the undead. The power of a Necromancer King.|
