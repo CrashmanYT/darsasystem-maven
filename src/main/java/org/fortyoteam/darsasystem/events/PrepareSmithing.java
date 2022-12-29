@@ -11,6 +11,7 @@ public class PrepareSmithing implements Listener {
 
     @EventHandler
     public void onPrepareSmithing(PrepareSmithingEvent e) {
+        if (e == null || e.getResult() == null) return;
         e.setResult(new Blacksmith().setItemTier((Player) e.getView().getPlayer(), e.getResult(), false, false).getItem());
     }
 }

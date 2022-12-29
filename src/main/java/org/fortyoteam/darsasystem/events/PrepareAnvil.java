@@ -11,6 +11,8 @@ public class PrepareAnvil implements Listener {
 
     @EventHandler
     public void onPrepareAnvil(PrepareAnvilEvent e) {
+        if (e == null || e.getResult() == null) return;
+
         e.setResult(new Blacksmith().setItemTier((Player) e.getView().getPlayer(), e.getResult(), false, false).getItem());
     }
 }

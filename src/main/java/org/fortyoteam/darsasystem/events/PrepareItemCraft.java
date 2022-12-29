@@ -11,6 +11,7 @@ public class PrepareItemCraft implements Listener {
 
     @EventHandler
     public void onPrepareItemCraft(PrepareItemCraftEvent e) {
+        if (e == null || e.getInventory().getResult() == null) return;
         e.getInventory().setResult(new Blacksmith().setItemTier((Player) e.getView().getPlayer(), e.getInventory().getResult(), false, false).getItem());
     }
 }
