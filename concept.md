@@ -2,7 +2,7 @@
 
 
 ```mermaid
-graph LR
+graph BT
     A[Red Team] --> J[2 Winners] --> Final[Winners]
     B[Blue Team]  --> J
     C[Green Team] --> J
