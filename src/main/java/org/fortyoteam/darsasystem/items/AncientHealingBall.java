@@ -16,10 +16,12 @@ public class AncientHealingBall {
         if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
             Scoreboard sb = Bukkit.getScoreboardManager().getMainScoreboard();
             for (Team team : sb.getTeams()) {
-                for (String memberName : team.getEntries()) {
-                    Player member = Bukkit.getPlayer(memberName);
-                    member.setHealth(member.getMaxHealth());
-                    member.getWorld().playSound(member, Sound.ENTITY_FIREWORK_ROCKET_LAUNCH, 2,2);
+                if (team.getEntries().contains(player.getName())) {
+                    for (String memberName : team.getEntries()) {
+                        Player member = Bukkit.getPlayer(memberName);
+                        member.setHealth(member.getMaxHealth());
+                        member.getWorld().playSound(member, Sound.ENTITY_FIREWORK_ROCKET_LAUNCH, 2, 2);
+                    }
                 }
             }
             Bukkit.getServer().broadcastMessage(DarsaConfig.SYSTEM_NAME + ChatColor.GOLD + ChatColor.BOLD + player.getName() + ChatColor.translateAlternateColorCodes('&'," &aMenggunakan Item Suci &e&lAncient Healing Ball"));
