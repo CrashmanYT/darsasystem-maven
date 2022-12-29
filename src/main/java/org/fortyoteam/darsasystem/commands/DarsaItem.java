@@ -11,6 +11,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.fortyoteam.darsasystem.config.ItemConfig;
 import org.fortyoteam.darsasystem.items.AncientHealingBall;
+import org.fortyoteam.darsasystem.items.FierySword;
 import org.fortyoteam.darsasystem.items.FrostSword;
 
 import java.util.ArrayList;
@@ -73,11 +74,12 @@ public class DarsaItem implements CommandExecutor {
             case "frostsword":
                 FrostSword.setEvent(e);
                 break;
-            case "phoenixaxe":
-                e.getPlayer().sendMessage("phoenixaxe activated");
+            case "fierysword":
+                new FierySword(e);
+                break;
             case "ancienthealball":
                 new AncientHealingBall(e,e.getPlayer());
-
+                break;
             default:
 
         }
