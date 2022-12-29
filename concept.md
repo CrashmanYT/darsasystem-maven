@@ -37,3 +37,13 @@ Note :
  - Jika sebuah item di enchant, maka level tier akan meningkat satu tier
 
 
+# Darsa Items
+
+|Item Name| Item Type| Ability | Description |
+|---------|----------|-------- |------------ |
+|Frost Sword| DIAMOND_SWORD| <ul> <li> Stun Enemy : 2 Seconds</li><li> Ice Domain : Mengubah sekeliling menjadi es</li> </ul>| The mystical sword once wielded by the Ice Lord |
+|Fiery Sword| NETHERITE_SWORD | <ul><li>Burn Enemy : 10 Seconds</li>Fire Domain : Mengubah sekeliling menjadi api<li></li></ul>| The mystical sword once wielded by the Fire Lord |
+|Light Boots| GOLD_BOOTS| <ul> <li> Increase Speed : 2x </li> </ul>| The Legendary shoes once worn by the Fastest Knight, Knight of Light!! |
+|Ancient Ball| HEART_OF_THE_SEA | <ul><li>Heal Player Team</li></ul>| The ball that can heal your team. | 
+|Shadow Cape| LEATHER_CHESTPLATE | <ul><li>Make Player Invisible</li></ul>| The mantle of the greatest assassin with the ability to Hide himself in the shadows |
+|Undead Resurrection| WITHER_SKELETON_SKULL | <ul><li>Resurrect 8 Undead </li></ul>| An item that can resurrect the undead. The power of a Necromancer King.|

@@ -49,7 +49,9 @@
   2. ❌ Blue Team
   3. ❌ Yellow Team
   4. ❌ Green Team
-- ❌ Main Mountain 
+- ❌ Main Mountain
+- ❌ Store 
+- ❌ Blacksmith House
   
 
 ### F. Bugs
