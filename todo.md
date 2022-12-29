@@ -10,6 +10,7 @@
 - ✅ Totem Of Reversal
 - ✅ Ancient Healing Ball
 - ❌ Shadow Cape
+- ❌ Moonlight Bow
 
 
 ### B. Mechanism
