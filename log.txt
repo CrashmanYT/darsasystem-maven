@@ -1,0 +1,83 @@
+commit 34345f8b43c07c65609075128e2a12ecbc48ce3c
+Author: Muhammad Shafly Putra Darmawan <pojokbelajarkuid@gmail.com>
+Date:   Thu Dec 29 16:27:22 2022 +0800
+
+    update todo
+
+commit df5733adf8782f3f2cec5383ccf7acc225ed8065
+Author: Muhammad Shafly Putra Darmawan <pojokbelajarkuid@gmail.com>
+Date:   Thu Dec 29 16:22:15 2022 +0800
+
+    add fiery sword
+
+commit 142c02886d5f4f58feb2b08794a5e803129b1315
+Author: Muhammad Shafly Putra Darmawan <pojokbelajarkuid@gmail.com>
+Date:   Thu Dec 29 15:21:56 2022 +0800
+
+    add shadow cape (80%) && protocollib
+
+commit cbe7c42b08668e5e2bccf41d5466f2ea8381226a
+Author: Muhammad Shafly Putra Darmawan <pojokbelajarkuid@gmail.com>
+Date:   Thu Dec 29 11:43:30 2022 +0800
+
+    make light boots
+
+commit a42059baccb0733a859fb613c4145051f906ea63
+Author: Muhammad Shafly Putra Darmawan <pojokbelajarkuid@gmail.com>
+Date:   Thu Dec 29 10:56:56 2022 +0800
+
+    fix bug itemType null in Craft/Anvil/Smthing Event
+
+commit 405be19727fa2fc4b185c513261102b81b49c428
+Author: Shafly <shaflyputra58@gmail.com>
+Date:   Wed Dec 28 23:59:28 2022 +0800
+
+    try to fix bug 'error when prepare craft and anvil'
+
+commit 4571c3559fa6b7302fa0595eeb40b500d91029e6
+Author: Shafly <shaflyputra58@gmail.com>
+Date:   Wed Dec 28 20:44:17 2022 +0800
+
+    make Totem Of Reversal
+
+commit b9c6314370244487ed56c2cf764abba48db87bc3
+Author: Shafly <59281548+CrashmanYT@users.noreply.github.com>
+Date:   Wed Dec 28 16:30:50 2022 +0800
+
+    add config file
+
+commit 199c70ca33052850ea30f47bb082807261679bfb
+Author: Muhammad Shafly Putra Darmawan <pojokbelajarkuid@gmail.com>
+Date:   Wed Dec 28 16:28:52 2022 +0800
+
+    make ancient healing ball event
+
+commit 078f96e9557ed504416a5c51f872aa3969481d33
+Author: Muhammad Shafly Putra Darmawan <pojokbelajarkuid@gmail.com>
+Date:   Wed Dec 28 12:37:04 2022 +0800
+
+    fix bug block disappear when player pickup item
+
+commit 659d2b1b8a98eb9484c73b698553e01ad45756ca
+Author: Muhammad Shafly Putra Darmawan <pojokbelajarkuid@gmail.com>
+Date:   Sun Dec 25 23:06:11 2022 +0800
+
+    fix bug scoreboard update && add some placeholder
+
+commit 3c27aef1be23a4f304c914b36770ae3a78afe55e
+Author: Muhammad Shafly Putra Darmawan <pojokbelajarkuid@gmail.com>
+Date:   Sun Dec 25 21:40:34 2022 +0800
+
+    fix bug error when pickup item and right click
+
+commit 4a7d349e00094aecbec16764397b72b55bdc9673
+Author: Shafly <shaflyputra58@gmail.com>
+Date:   Sun Dec 25 20:03:43 2022 +0800
+
+    add project file
+
+commit 841e053d1d273d3cc6f19082f144e671fb8cfa6d
+Author: Shafly <shaflyputra58@gmail.com>
+Date:   Sun Dec 25 18:49:26 2022 +0800
+
+    change project build using maven

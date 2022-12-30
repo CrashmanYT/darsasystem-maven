@@ -41,6 +41,7 @@ public class Main extends JavaPlugin {
         getCommand("darsashop").setExecutor(new Shop());
 
 
+        getServer().getPluginManager().registerEvents(new BlockBreak(), this);
         getServer().getPluginManager().registerEvents(new PlayerInteract(), this);
         getServer().getPluginManager().registerEvents(new PlayerPickupItem(), this);
         getServer().getPluginManager().registerEvents(new PlayerDropItem(), this);

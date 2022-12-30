@@ -44,8 +44,6 @@ public class DarsaItem implements CommandExecutor {
 
         // for item that have color (like leather armor)
         String color = ItemConfig.get().getString(args[0] + ".Color");
-        player.sendMessage(color + "");
-
         // if item have color, set meta to LeatherArmorMeta
         if (color != null) {
             String[] rgbCode = color.split(",");
