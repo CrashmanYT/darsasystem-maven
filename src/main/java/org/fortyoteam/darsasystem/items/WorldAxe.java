@@ -99,7 +99,7 @@ public class WorldAxe {
 
     public void removeLeaves(Block block) {
         if (Arrays.asList(leavesList).contains(block.getType()))
-            block.setType(Material.AIR);
+            block.breakNaturally();
     }
 
 }
