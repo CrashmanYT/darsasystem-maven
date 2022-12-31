@@ -5,6 +5,7 @@ import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Projectile;
 import org.bukkit.event.entity.EntityShootBowEvent;
+import org.bukkit.util.Vector;
 import org.fortyoteam.darsasystem.config.ItemConfig;
 
 public class GenusBow {
@@ -17,16 +18,13 @@ public class GenusBow {
                 if (event.getEntity() instanceof Player) {
                     int arrowsCount = 5;
                     Player player = (Player) event.getEntity();
-                    for (int velocity = 30; velocity <= 30 * arrowsCount; velocity += 30 ) {
-                        Arrow arrow = player.getWorld().spawn(player.getEyeLocation(), Arrow.class);
+                        Arrow arrow = player.launchProjectile(Arrow.class);
+                        Vector arrowVector = player.getLocation().getDirection().clone();
+
+                        arrowVector.rotateAroundY(0.3);
+                        arrow.setVelocity(arrowVector);
                         arrow.setShooter(player);
-                        arrow.setVelocity(arrow.getVelocity().rotateAroundY(Math.toRadians(velocity)));
-                    }
-                    for (int velocity = -30; velocity <= -30 * arrowsCount; velocity += -30) {
-                        Arrow arrow = player.getWorld().spawn(player.getEyeLocation(), Arrow.class);
-                        arrow.setShooter(player);
-                        arrow.setVelocity(arrow.getVelocity().rotateAroundY(Math.toRadians(velocity)));
-                    }
+
                 }
             }
         }

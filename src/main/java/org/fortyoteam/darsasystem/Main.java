@@ -49,6 +49,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
         getServer().getPluginManager().registerEvents(new PlayerMove(), this);
         getServer().getPluginManager().registerEvents(new EntityResurrect(), this);
+        getServer().getPluginManager().registerEvents(new EntityShootBow(), this);
         getServer().getPluginManager().registerEvents(new InventoryClick(), this);
         getServer().getPluginManager().registerEvents(new InventoryMove(), this);
         getServer().getPluginManager().registerEvents(new InventoryOpen(), this);
