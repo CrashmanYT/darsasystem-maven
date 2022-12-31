@@ -4,7 +4,7 @@
 ### A. Custom Items
 - ✅ Fiery Sword
 - ✅ Frost Sword
-- ❌ World Axe
+- ✅ World Axe
 - ❌ Undead Resurrection
 - ✅ Light Boots
 - ✅ Totem Of Reversal
