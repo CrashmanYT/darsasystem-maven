@@ -5,33 +5,45 @@ frostsword:
   Lore:
   - The mystical sword once wielded by the &b&lIce Lord
 
-phoenixaxe:
-  Type: NETHERITE_AXE
+fierysword:
+  Type: NETHERITE_SWORD
   Tier: '&c&lTier S+'
-  DisplayName: '&c&lPhoenix Axe'
+  DisplayName: '&c&lFiery Sword'
   Lore:
   - The mystical sword once wielded by the &c&lFire Lord
+worldaxe:
+  Type: IRON_AXE
+  Tier: '&c&lTier S+'
+  DisplayName: '&a&lWorld Axe'
+  Lore:
+  - '&e&lThe Legendary Axe &fthat is loved by &2&lNature'
+  - '&fCan cut down several trees at once'
+
 ancienthealball:
   Type: HEART_OF_THE_SEA
   Tier: '&c&lTier S+'
   DisplayName: '&a&lAncient Healing Ball'
   Lore:
-  - The ball that can &aheal your team.
+  - '&fThe ball that can &aheal your team.'
 undeadresurrection:
   Type: WITHER_SKELETON_SKULL
   Tier: '&c&lTier S+'
   DisplayName: '&4&lUndead Resurrection'
   Lore:
-  - An item that can resurrect the undead. The power of a &4&lNecromancer King.
+  - '&fAn item that can resurrect the undead.'
+  - '&fThe power of a &4&lNecromancer King.'
 lightboots:
   Type: GOLDEN_BOOTS
   Tier: '&c&lTier S+'
   DisplayName: '&e&lLight Boots'
   Lore:
-  - '&eThe Legendary shoes once worn by the Fastest Knight, &lKnight of Light!!'
-totemofreversal:
-  Type: TOTEM_OF_UNDYING
+  - '&eThe Legendary shoes once worn by'
+  - '&e&lthe Fastest Knight, Knight of Light!!'
+shadowcape:
+  Type: LEATHER_CHESTPLATE
   Tier: '&c&lTier S+'
-  DisplayName: '&4&lTotem Of Reversal'
+  Color: 44,48,101
+  DisplayName: '&8&lShadow Cape'
   Lore:
-  - '&eThe totem that can &a&lRevive you and &c&lCounter enemy attacks'
+  - '&fThe mantle of the greatest assassin with the ability to'
+  - '&8&lHide himself in the shadows'
