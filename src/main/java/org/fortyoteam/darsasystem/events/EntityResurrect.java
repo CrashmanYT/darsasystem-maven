@@ -10,7 +10,7 @@ public class EntityResurrect implements Listener {
 
     @EventHandler
     public void onEntityResurrectEvent(EntityResurrectEvent e) {
-
+        if (e == null) return;
         new TotemOfReversal(e);
 
     }
