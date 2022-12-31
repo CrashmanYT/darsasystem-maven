@@ -47,3 +47,10 @@ shadowcape:
   Lore:
   - '&fThe mantle of the greatest assassin with the ability to'
   - '&8&lHide himself in the shadows'
+genusbow:
+  Type: BOW
+  Tier: '&c&lTier S+'
+  DisplayName: '&2&lGenus Bow'
+  Lore:
+  - '&fThe legendary bow of the &4&lForbidden Forest,'
+  - '&fThe ancestors said that it could shoot &e&lThousands of Arrows &fin one shot'
