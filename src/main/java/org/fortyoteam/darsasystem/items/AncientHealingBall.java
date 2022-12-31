@@ -13,6 +13,7 @@ import org.fortyoteam.darsasystem.config.DarsaConfig;
 public class AncientHealingBall {
 
     public AncientHealingBall(PlayerInteractEvent e, Player player) {
+        if (e == null) return;
         if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
             Scoreboard sb = Bukkit.getScoreboardManager().getMainScoreboard();
             for (Team team : sb.getTeams()) {

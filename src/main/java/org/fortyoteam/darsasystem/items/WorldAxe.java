@@ -20,7 +20,7 @@ public class WorldAxe {
             Material.STRIPPED_OAK_LOG, Material.STRIPPED_DARK_OAK_LOG, Material.STRIPPED_BIRCH_LOG, Material.STRIPPED_ACACIA_LOG, Material.STRIPPED_SPRUCE_LOG, Material.STRIPPED_JUNGLE_LOG, Material.STRIPPED_MANGROVE_LOG,
     };
     public Material[] plantableBlocks = {
-            Material.DIRT, Material.GRASS_BLOCK
+            Material.DIRT, Material.GRASS_BLOCK, Material.ROOTED_DIRT, Material.COARSE_DIRT, Material.PODZOL, Material.MYCELIUM
     };
     public Material[] leavesList = {
             Material.OAK_LEAVES, Material.BIRCH_LEAVES, Material.SPRUCE_LEAVES, Material.ACACIA_LEAVES, Material.DARK_OAK_LEAVES, Material.JUNGLE_LEAVES, Material.MANGROVE_LEAVES
