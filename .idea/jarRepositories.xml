@@ -47,14 +47,14 @@
       <option name="url" value="https://repo.papermc.io/repository/maven-public/" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="nexus" />
-      <option name="name" value="Lumine Releases" />
-      <option name="url" value="https://mvn.lumine.io/repository/maven-public/" />
-    </remote-repository>
-    <remote-repository>
       <option name="id" value="repobo-snap" />
       <option name="name" value="repobo-snap" />
       <option name="url" value="http://repo.bukkit.org/content/groups/public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="nexus" />
+      <option name="name" value="Lumine Releases" />
+      <option name="url" value="https://mvn.lumine.io/repository/maven-public/" />
     </remote-repository>
   </component>
 </project>
