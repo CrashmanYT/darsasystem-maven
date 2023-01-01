@@ -8,7 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.fortyoteam.darsasystem.commands.Shop;
+import org.fortyoteam.darsasystem.commands.ShopCommand;
 import org.fortyoteam.darsasystem.config.DarsaConfig;
 
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public class InventoryClick implements Listener {
         Player player = (Player) e.getWhoClicked();
 
         // Shop Events
-        if (e.getInventory().equals(Shop.shopGui)) {
+        if (e.getInventory().equals(ShopCommand.categoryShop)) {
             e.setCancelled(true);
 
             ItemStack buyedItem = e.getCurrentItem();

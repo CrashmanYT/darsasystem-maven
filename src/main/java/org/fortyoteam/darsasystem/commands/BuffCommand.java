@@ -12,7 +12,7 @@ import net.md_5.bungee.api.ChatColor;
 import org.fortyoteam.darsasystem.config.DarsaConfig;
 import org.fortyoteam.darsasystem.enums.ErrorMessage;
 
-public class Buff implements CommandExecutor {
+public class BuffCommand implements CommandExecutor {
     public static boolean BUFF_TOGGLE = false;
 
     @Override

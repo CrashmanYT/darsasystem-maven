@@ -13,9 +13,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Help implements CommandExecutor {
+public class HelpCommand implements CommandExecutor {
     JavaPlugin plugin;
-    public Help(JavaPlugin plugin) {
+    public HelpCommand(JavaPlugin plugin) {
         this.plugin = plugin;
     }
     @Override

@@ -16,17 +16,16 @@ public class GenusBow {
         if (event.getBow().getItemMeta().getDisplayName().equals(genusBowName)) {
             if (event.getProjectile() instanceof Arrow) {
                 if (event.getEntity() instanceof Player) {
-                    int arrowsCount = 5;
-                    Player player = (Player) event.getEntity();
-                        Arrow arrow = player.launchProjectile(Arrow.class);
-                        Vector arrowVector = player.getLocation().getDirection().clone();
-
-                        arrowVector.rotateAroundY(0.3);
-                        arrow.setVelocity(arrowVector);
-                        arrow.setShooter(player);
 
                 }
             }
         }
+    }
+
+    public void shootArrow(Player player, Vector vector) {
+        Arrow arrow = player.launchProjectile(Arrow.class);
+
+        arrow.setVelocity(vector);
+        arrow.setShooter(player);
     }
 }

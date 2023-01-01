@@ -16,7 +16,7 @@ import org.fortyoteam.darsasystem.items.FrostSword;
 
 import java.util.ArrayList;
 
-public class DarsaItem implements CommandExecutor {
+public class DarsaItemCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {

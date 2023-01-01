@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 import org.fortyoteam.darsasystem.config.DarsaConfig;
 import org.fortyoteam.darsasystem.config.ItemConfig;
 
-public class Reload implements CommandExecutor {
+public class ReloadCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {

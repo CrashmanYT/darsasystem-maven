@@ -26,19 +26,19 @@ public class Main extends JavaPlugin {
         ScoreboardConfig.get().options().copyDefaults(true);
         ScoreboardConfig.save();
         // Config Commands
-        getCommand("dsr").setExecutor(new Reload());
+        getCommand("dsr").setExecutor(new ReloadCommand());
 
-        getCommand("darsabuff").setExecutor(new Buff());
+        getCommand("darsabuff").setExecutor(new BuffCommand());
         getCommand("darsabuff").setTabCompleter(new BuffCompleter());
 
-        getCommand("darsablacksmith").setExecutor(new Blacksmith());
+        getCommand("darsablacksmith").setExecutor(new BlacksmithCommand());
 
-        getCommand("darsaitem").setExecutor(new DarsaItem());
+        getCommand("darsaitem").setExecutor(new DarsaItemCommand());
         getCommand("darsaitem").setTabCompleter(new DarsaItemsCompleter());
 
-        getCommand("darsahelp").setExecutor(new Help(this));
+        getCommand("darsahelp").setExecutor(new HelpCommand(this));
 
-        getCommand("darsashop").setExecutor(new Shop());
+        getCommand("darsashop").setExecutor(new ShopCommand());
 
 
         getServer().getPluginManager().registerEvents(new BlockBreak(), this);

@@ -6,7 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.PrepareSmithingEvent;
 import org.bukkit.inventory.SmithingInventory;
-import org.fortyoteam.darsasystem.commands.Blacksmith;
+import org.fortyoteam.darsasystem.commands.BlacksmithCommand;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class SmithingTable implements Listener {
     public void onSmithingTableEvent(PrepareSmithingEvent e) {
         List<HumanEntity> viewers = e.getViewers();
         viewers.forEach(humanEntity -> ((Player)humanEntity).updateInventory());
-        if (e.getInventory().equals(Blacksmith.blacksmithGui)) {
+        if (e.getInventory().equals(BlacksmithCommand.blacksmithGui)) {
             SmithingInventory inv = e.getInventory();
 
 

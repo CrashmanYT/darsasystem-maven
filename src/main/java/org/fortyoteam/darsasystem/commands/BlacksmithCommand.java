@@ -17,7 +17,7 @@ import org.fortyoteam.darsasystem.type.Tier;
 
 import java.util.*;
 
-public class Blacksmith implements CommandExecutor {
+public class BlacksmithCommand implements CommandExecutor {
     public static Inventory blacksmithGui;
     public static NavigableMap<String, String[]> tiers;
 

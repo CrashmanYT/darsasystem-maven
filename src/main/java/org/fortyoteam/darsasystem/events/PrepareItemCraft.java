@@ -4,14 +4,13 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.PrepareItemCraftEvent;
-import org.bukkit.inventory.ItemStack;
-import org.fortyoteam.darsasystem.commands.Blacksmith;
+import org.fortyoteam.darsasystem.commands.BlacksmithCommand;
 
 public class PrepareItemCraft implements Listener {
 
     @EventHandler
     public void onPrepareItemCraft(PrepareItemCraftEvent e) {
         if (e == null || e.getInventory().getResult() == null) return;
-        e.getInventory().setResult(new Blacksmith().setItemTier((Player) e.getView().getPlayer(), e.getInventory().getResult(), false, false).getItem());
+        e.getInventory().setResult(new BlacksmithCommand().setItemTier((Player) e.getView().getPlayer(), e.getInventory().getResult(), false, false).getItem());
     }
 }
