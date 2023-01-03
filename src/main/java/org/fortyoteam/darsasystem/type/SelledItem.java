@@ -2,6 +2,7 @@ package org.fortyoteam.darsasystem.type;
 
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
+import org.fortyoteam.darsasystem.enums.ButtonType;
 
 public class SelledItem extends ItemStack {
 

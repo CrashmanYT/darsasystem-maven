@@ -2,17 +2,24 @@ package org.fortyoteam.darsasystem.type;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.fortyoteam.darsasystem.enums.ButtonType;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Shop {
 
+    private static List<Inventory> page = new ArrayList<>();
 
-    public static Inventory createShop(String title ,SelledItem[] items) {
+    public static Inventory createShop(String title ,SelledItem[] items, boolean isNewPage) {
         // create next page if items is more than 28, use recursive function
         if (items.length > 28) return createNextPage(title, Arrays.copyOfRange(items, 27, items.length - 1));
+
 
         Inventory shop = Bukkit.createInventory(null,54, ChatColor.translateAlternateColorCodes('&',title ));
 
@@ -24,9 +31,17 @@ public class Shop {
             for (int i = 10; i < items.length; i++) {
                 if (!Arrays.asList(blacklistedSlot).contains(i)) // if slot index is contain blacklisted slot
                     shop.setItem(i, addItem(item));
+
             }
         }
-        return shop;
+
+        if (isNewPage) {
+            shop.setItem(51, createButton(Material.REDSTONE, ButtonType.PREVIOUS_PAGE,"Previous Page", new String[]{"Go To Previous Page"}));
+            shop.setItem(52, createButton(Material.REDSTONE, ButtonType.CLOSE_INV,"Close Shop", new String[]{"Close this shop"}));
+            shop.setItem(53, createButton(Material.REDSTONE, ButtonType.NEXT_PAGE,"Next Page", new String[]{"Go To Next Page"}));
+            page.add(shop);
+        }
+        return isNewPage ? page.get(page.indexOf(shop)) : shop;
 
     }
 
@@ -40,7 +55,14 @@ public class Shop {
 
     // Function to create next page when items size is bigger than 28
     private static Inventory createNextPage(String title, SelledItem[] items) {
-        return createShop(title, items);
+        return createShop(title, items, true);
+    }
+
+    private static Button createButton(Material material, ButtonType type, String name, String[] lore) {
+        Button item = new Button(material, type, name, lore);
+        return item;
     }
 
 }
+
+
