@@ -2,7 +2,7 @@
 
 ```mermaid
 graph BT
-    A[Red Team] --> J[2 Winners] --> Final[Winners]
+    A[Red Team] --> J[2 Winners] --> Final[The Winner]
     B[Blue Team]  --> J
     C[Green Team] --> J
     D[Yellow Team] --> J
