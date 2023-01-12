@@ -16,10 +16,5 @@ public class SmithingTable implements Listener {
     public void onSmithingTableEvent(PrepareSmithingEvent e) {
         List<HumanEntity> viewers = e.getViewers();
         viewers.forEach(humanEntity -> ((Player)humanEntity).updateInventory());
-        if (e.getInventory().equals(BlacksmithCommand.blacksmithGui)) {
-            SmithingInventory inv = e.getInventory();
-
-
-        }
     }
 }

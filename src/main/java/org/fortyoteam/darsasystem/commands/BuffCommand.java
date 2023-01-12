@@ -39,7 +39,7 @@ public class BuffCommand implements CommandExecutor {
             return true;
         }
 
-        return false;
+        return true;
     }
 
     private void toggleBuff(PotionEffect[] effects, CommandSender sender, String buffName) {

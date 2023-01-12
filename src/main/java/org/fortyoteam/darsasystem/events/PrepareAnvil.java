@@ -1,10 +1,12 @@
 package org.fortyoteam.darsasystem.events;
 
 import org.bukkit.entity.Player;
+import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.PrepareAnvilEvent;
 import org.fortyoteam.darsasystem.commands.BlacksmithCommand;
+import org.fortyoteam.darsasystem.misc.Blacksmith;
 
 public class PrepareAnvil implements Listener {
 
@@ -13,5 +15,7 @@ public class PrepareAnvil implements Listener {
         if (e == null || e.getResult() == null) return;
 
         e.setResult(new BlacksmithCommand().setItemTier((Player) e.getView().getPlayer(), e.getResult(), false, false).getItem());
+
+
     }
 }

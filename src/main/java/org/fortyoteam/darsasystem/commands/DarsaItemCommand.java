@@ -64,7 +64,7 @@ public class DarsaItemCommand implements CommandExecutor {
         player.getInventory().addItem(item);
 
 
-        return false;
+        return true;
     }
 
     public static void setEvent(PlayerInteractEvent e, String itemname) {

@@ -4,7 +4,7 @@ package org.fortyoteam.darsasystem;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.fortyoteam.darsasystem.commands.*;
 import org.fortyoteam.darsasystem.completer.*;
-import org.fortyoteam.darsasystem.config.ScoreboardConfig;
+import org.fortyoteam.darsasystem.config.BlacksmithConfig;
 import org.fortyoteam.darsasystem.events.*;
 import org.fortyoteam.darsasystem.config.ItemConfig;
 
@@ -22,9 +22,9 @@ public class Main extends JavaPlugin {
         ItemConfig.get().options().copyDefaults(true);
         ItemConfig.save();
 
-        ScoreboardConfig.setup();
-        ScoreboardConfig.get().options().copyDefaults(true);
-        ScoreboardConfig.save();
+        BlacksmithConfig.setup();
+        BlacksmithConfig.get().options().copyDefaults(true);
+        BlacksmithConfig.save();
         // Config Commands
         getCommand("dsr").setExecutor(new ReloadCommand());
 

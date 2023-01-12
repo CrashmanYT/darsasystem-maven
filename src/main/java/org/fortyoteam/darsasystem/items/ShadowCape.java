@@ -1,13 +1,7 @@
 package org.fortyoteam.darsasystem.items;
 
-import io.lumine.mythic.bukkit.utils.events.extra.ArmorEquipEvent;
-import net.minecraft.network.protocol.game.PacketPlayOutEntityEquipment;
-import net.minecraft.world.entity.EnumItemSlot;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.craftbukkit.v1_19_R1.entity.CraftPlayer;
-import org.bukkit.craftbukkit.v1_19_R1.inventory.CraftItemStack;
-import org.bukkit.entity.Entity;
+import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.potion.PotionEffect;
@@ -18,7 +12,9 @@ public class ShadowCape {
 
     public ShadowCape(PlayerMoveEvent event) {
         Player player = event.getPlayer();
-        
+
+        if  (player.getGameMode() == GameMode.SPECTATOR) return;
+
         // disable invisible
         if (player.getEquipment().getChestplate() == null) {
             player.removePotionEffect(PotionEffectType.INVISIBILITY);

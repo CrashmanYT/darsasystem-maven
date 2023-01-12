@@ -8,8 +8,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.fortyoteam.darsasystem.commands.BlacksmithCommand;
 import org.fortyoteam.darsasystem.commands.ShopCommand;
 import org.fortyoteam.darsasystem.config.DarsaConfig;
+import org.fortyoteam.darsasystem.misc.Blacksmith;
 
 import java.util.ArrayList;
 
@@ -20,22 +22,25 @@ public class InventoryClick implements Listener {
 
         Player player = (Player) e.getWhoClicked();
 
+
+        if (BlacksmithCommand.blacksmith != null)
+            BlacksmithCommand.blacksmith.setRecipe(e);
         // Shop Events
-        if (e.getInventory().equals(ShopCommand.categoryShop)) {
-            e.setCancelled(true);
-
-            ItemStack buyedItem = e.getCurrentItem();
-            ItemMeta meta = buyedItem.getItemMeta();
-            int price = Integer.parseInt(new StringBuilder(meta.getLore().get(0).replaceAll("[^0-9]", "")).deleteCharAt(0).toString());
-            meta.setLore(new ArrayList<>());
-
-            if (!player.getInventory().contains(Material.GOLD_INGOT, price)) {
-                player.sendMessage(DarsaConfig.SYSTEM_NAME + ChatColor.RED +"Emas Anda Kurang");
-                return;
-            }
-            player.getInventory().removeItem(new ItemStack(Material.GOLD_INGOT, price));
-            player.getInventory().addItem(buyedItem);
-            player.sendMessage(DarsaConfig.SYSTEM_NAME + ChatColor.GREEN + "Berhasi melakukan pembelian! ");
-        }
+//        if (e.getInventory().equals(ShopCommand.categoryShop)) {
+//            e.setCancelled(true);
+//
+//            ItemStack buyedItem = e.getCurrentItem();
+//            ItemMeta meta = buyedItem.getItemMeta();
+//            int price = Integer.parseInt(new StringBuilder(meta.getLore().get(0).replaceAll("[^0-9]", "")).deleteCharAt(0).toString());
+//            meta.setLore(new ArrayList<>());
+//
+//            if (!player.getInventory().contains(Material.GOLD_INGOT, price)) {
+//                player.sendMessage(DarsaConfig.SYSTEM_NAME + ChatColor.RED +"Emas Anda Kurang");
+//                return;
+//            }
+//            player.getInventory().removeItem(new ItemStack(Material.GOLD_INGOT, price));
+//            player.getInventory().addItem(buyedItem);
+//            player.sendMessage(DarsaConfig.SYSTEM_NAME + ChatColor.GREEN + "Berhasi melakukan pembelian! ");
+//        }
     }
 }

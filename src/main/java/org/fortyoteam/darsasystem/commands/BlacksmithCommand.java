@@ -4,24 +4,26 @@ import io.lumine.mythic.bukkit.utils.lib.jooq.False;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.fortyoteam.darsasystem.config.ItemConfig;
+import org.fortyoteam.darsasystem.misc.Blacksmith;
 import org.fortyoteam.darsasystem.type.Tier;
 
 import java.util.*;
 
 public class BlacksmithCommand implements CommandExecutor {
-    public static Inventory blacksmithGui;
+    public static Blacksmith blacksmith;
     public static NavigableMap<String, String[]> tiers;
-
-
     static {
         tiers = new TreeMap<String, String[]>();
         tiers.put("(1) " + "Tier C", new String[] {"STONE", "IRON"});
@@ -36,12 +38,11 @@ public class BlacksmithCommand implements CommandExecutor {
         if (!(sender instanceof Player)) return false;
         Player player = (Player)sender;
 
+        blacksmith = new Blacksmith(player);
+        blacksmith.setDisplayName("&a&lDarsaBlacksmith");
+        blacksmith.showGui();
 
-        Inventory blacksmithGui = Bukkit.createInventory(null, InventoryType.SMITHING);
-        player.openInventory(blacksmithGui);
-
-
-        return false;
+        return true;
     }
 
 //    public static void initRecipe(Main main) {

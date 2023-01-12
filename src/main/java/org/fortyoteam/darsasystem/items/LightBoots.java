@@ -1,6 +1,7 @@
 package org.fortyoteam.darsasystem.items;
 
 import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
 import org.bukkit.block.data.type.Light;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerMoveEvent;
@@ -10,6 +11,8 @@ public class LightBoots {
 
     public LightBoots(PlayerMoveEvent event) {
         Player player = event.getPlayer();
+
+        if  (player.getGameMode() == GameMode.SPECTATOR) return;
 
         // set walk speed to normal
         if (player.getEquipment().getBoots() == null) {
