@@ -22,7 +22,6 @@ import org.fortyoteam.darsasystem.type.Tier;
 import java.util.*;
 
 public class BlacksmithCommand implements CommandExecutor {
-    public static Blacksmith blacksmith;
     public static NavigableMap<String, String[]> tiers;
     static {
         tiers = new TreeMap<String, String[]>();
@@ -38,23 +37,13 @@ public class BlacksmithCommand implements CommandExecutor {
         if (!(sender instanceof Player)) return false;
         Player player = (Player)sender;
 
-        blacksmith = new Blacksmith(player);
+        Blacksmith blacksmith = new Blacksmith(player);
         blacksmith.setDisplayName("&a&lDarsaBlacksmith");
         blacksmith.showGui();
 
         return true;
     }
 
-//    public static void initRecipe(Main main) {
-//        SmithingRecipe netheriteSword = new SmithingRecipe(new NamespacedKey(main, "netheriteSword"),
-//                new ItemStack(Material.NETHERITE_SWORD),
-//                new RecipeChoice.MaterialChoice(Material.DIAMOND_SWORD),
-//                new RecipeChoice.MaterialChoice(Material.AMETHYST_SHARD)
-//        );
-//
-//        Bukkit.addRecipe(netheriteSword);
-//    }
-//
 
     /**
      *

@@ -22,9 +22,6 @@ public class InventoryClick implements Listener {
 
         Player player = (Player) e.getWhoClicked();
 
-
-        if (BlacksmithCommand.blacksmith != null)
-            BlacksmithCommand.blacksmith.setRecipe(e);
         // Shop Events
 //        if (e.getInventory().equals(ShopCommand.categoryShop)) {
 //            e.setCancelled(true);

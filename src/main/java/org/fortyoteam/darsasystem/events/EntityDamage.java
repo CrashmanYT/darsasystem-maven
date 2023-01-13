@@ -15,18 +15,6 @@ public class EntityDamage implements Listener {
 
     @EventHandler
     public void onEntityDamageEvent(EntityDamageEvent event) {
-        ScoreboardManager sbm = Bukkit.getScoreboardManager();
-        Scoreboard scoreboard = sbm.getMainScoreboard();
-        EntityDamageByEntityEvent entityDamageByEntity = (EntityDamageByEntityEvent) event;
 
-        Player player = (Player) event;
-        Player killer = (Player) entityDamageByEntity.getDamager();
-        if (player.isDead()) {
-            for (Team team : scoreboard.getTeams()) {
-                if (team.hasEntry(player.getDisplayName())) {
-
-                }
-            }
-        }
      }
 }
