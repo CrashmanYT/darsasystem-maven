@@ -39,6 +39,7 @@ public class PlayerDeath implements Listener {
 
                     // check team member inventory
                     for (ItemStack item : teamMember.getInventory().getContents()){
+                        if (item == null) return;
                         if (item.getType() == Material.NETHER_STAR) {
                             killer.getInventory().addItem(item);
                             player.getInventory().removeItem(item);
@@ -53,5 +54,4 @@ public class PlayerDeath implements Listener {
             }
         }
 
-    }
-}
+    }}
