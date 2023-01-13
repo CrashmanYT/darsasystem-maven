@@ -28,6 +28,8 @@ public class Main extends JavaPlugin {
         // Config Commands
         getCommand("dsr").setExecutor(new ReloadCommand());
 
+        getCommand("gvc").setExecutor(new GiveCoreCommand());
+
         getCommand("darsabuff").setExecutor(new BuffCommand());
         getCommand("darsabuff").setTabCompleter(new BuffCompleter());
 

@@ -12,6 +12,8 @@ import org.bukkit.inventory.ItemStack;
 import org.fortyoteam.darsasystem.config.DarsaConfig;
 import org.fortyoteam.darsasystem.config.ItemConfig;
 
+import java.util.Objects;
+
 public class TotemOfReversal {
     public TotemOfReversal(EntityResurrectEvent e) {
         if (!(e.getEntity() instanceof Player)) return;
@@ -22,11 +24,11 @@ public class TotemOfReversal {
         ItemStack totemStack = player.getEquipment().getItem(mainHand);
 
         String totemName = ChatColor.translateAlternateColorCodes('&', ItemConfig.get().getString("totemofreversal.DisplayName"));
-
+        if (!totemStack.hasItemMeta()) return;
         // check player hand
-        if (totemStack == null || !totemStack.getItemMeta().getDisplayName().equals(totemName)) {
+        if (totemStack == null || !Objects.requireNonNull(totemStack.getItemMeta()).getDisplayName().equals(totemName)) {
             totemStack = player.getEquipment().getItem(offHand);
-            if (totemStack == null || !totemStack.getItemMeta().getDisplayName().equals(totemName)) {
+            if (totemStack == null || !Objects.requireNonNull(totemStack.getItemMeta()).getDisplayName().equals(totemName)) {
                 return;
             }
         }

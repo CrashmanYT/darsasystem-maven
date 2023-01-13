@@ -28,3 +28,6 @@ commands:
   dsr:
     description: Reload Config
     usage: /dsr
+  gvc:
+    description: Give core
+    usage: /gvc <player> <core name>
